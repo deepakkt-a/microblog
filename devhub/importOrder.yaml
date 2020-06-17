@@ -1,0 +1,49 @@
+version: v4.0
+navigator:
+    name: Deepak
+    email: devhubteam@trilogy.com
+repo:
+    companyName: Tekton
+    productName: tekton-beta
+    repoUrl: https://github.com/deepakkt-a/microblog
+    repoType: Deployable service
+    githubTokenSecretId: ""
+    branch: master
+buildDeps: []
+build:
+    techStack: Python
+    os: Ubuntu 16.04
+    image: python:3.6-alpine
+    toolchainVersion: Python 3.6
+    tool: ""
+    preBuildCommand: echo "No prebuild"
+    buildCommand: echo "Only docker build"
+test:
+    utFramework: pytest
+    testCommand: pytest
+package:
+    packageCommand: echo N/A
+    artifactDir: ./target
+    artifactUploadCommand: echo "empty artifactUploadCommand"
+deploy:
+    serviceName: microblog
+    deploymentCheck: cat /dev/null
+    stickySessions: "false"
+    canUseLb: "true"
+    stablePersistence: "false"
+    fixedNetworkIdentifier: "false"
+run:
+    dockerized: true
+    os: Ubuntu 16.04
+    installDir: ./install
+    userName: root
+ports:
+  - name: api
+    number: "5000"
+    protocol: HTTP
+    public: true
+    path: /
+envs:
+  - name: qa
+    default: true
+    vars: null

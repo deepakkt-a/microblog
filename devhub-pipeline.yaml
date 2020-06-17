@@ -1,0 +1,18 @@
+version: v1
+productName: tekton-beta
+build:
+    image: python:3.6-alpine
+    platform: linux
+    preBuildCommand: echo "No prebuild"
+    buildCommand: echo "Only docker build"
+test:
+    testCommand: pytest
+package:
+    artifactRepoType: pypi
+    packageCommand: echo N/A
+    artifactDir: ./target
+    artifactUploadCommand: echo "empty artifactUploadCommand"
+repoType: Deployable service
+release:
+    targetChartFile: microblog
+    dockerized: true
