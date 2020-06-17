@@ -19,7 +19,7 @@ build:
     preBuildCommand: echo "No prebuild"
     buildCommand: echo "Only docker build"
 test:
-    testCommand: pytest
+    testCommand: echo "no test"
 package:
     artifactRepoType: pypi
     packageCommand: echo N/A
