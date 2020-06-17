@@ -1,7 +1,20 @@
 version: v1
 productName: tekton-beta
+buildEnvVars:
+  - key: PATH
+    kind: config
+    value: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  - key: LANG
+    kind: config
+    value: C.UTF-8
+  - key: LC_ALL
+    kind: config
+    value: C.UTF-8
+  - key: PIPELINE_INIT_COMMAND
+    kind: config
+    value: echo 'No init commands provided'
 build:
-    image: python:3.6-alpine
+    image: 652819854130.dkr.ecr.us-east-1.amazonaws.com/devhub/builder-xenial-python
     platform: linux
     preBuildCommand: echo "No prebuild"
     buildCommand: echo "Only docker build"

@@ -13,7 +13,7 @@ buildDeps: []
 build:
     techStack: Python
     os: Ubuntu 16.04
-    image: python:3.6-alpine
+    image: ""
     toolchainVersion: Python 3.6
     tool: ""
     preBuildCommand: echo "No prebuild"
