@@ -21,6 +21,9 @@ build:
 test:
     testCommand: echo "no test"
 package:
+    on:
+      branches:
+        - '*'
     artifactRepoType: pypi
     packageCommand: echo N/A
     artifactDir: ./target
